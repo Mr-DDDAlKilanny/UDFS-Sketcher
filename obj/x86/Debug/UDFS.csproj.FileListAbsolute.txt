@@ -1,0 +1,13 @@
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\obj\x86\Debug\Udfs.Form1.resources
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\obj\x86\Debug\Udfs.Form2.resources
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\obj\x86\Debug\Udfs.Properties.Resources.resources
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\obj\x86\Debug\UDFS.csproj.GenerateResource.Cache
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\udfs.xshd
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\UDFS.exe
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\UDFS.pdb
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\Antlr3.Runtime.dll
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\ICSharpCode.AvalonEdit.dll
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\ICSharpCode.AvalonEdit.pdb
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\bin\Debug\ICSharpCode.AvalonEdit.xml
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\obj\x86\Debug\UDFS.exe
+D:\العلم\الحاسوب\مشروع\Antlr\antlrcsharp100620\UDFS\obj\x86\Debug\UDFS.pdb

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FCC7337-E43E-42AC-964E-F046AF021567}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sketcher</RootNamespace>
+    <AssemblyName>UdfsSketcher</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\CS2\Reference\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>C:\Users\ibrahim\Desktop\New folder\FastColoredTextBox-master\SharpDevelop_4.3.3.9663_Source\bin\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ui\BraceFoldingStrategy.cs" />
+    <Compile Include="Drawing\Expressions\Expression.cs" />
+    <Compile Include="Drawing\Expressions\expressionLexer.cs" />
+    <Compile Include="Drawing\Expressions\expressionParser.cs" />
+    <Compile Include="Drawing\SketcherPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Ui\FormDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FormDebug.Designer.cs">
+      <DependentUpon>FormDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Udfs\CompileMessage.cs" />
+    <Compile Include="Udfs\Runtime\Debugging\Debugger.cs" />
+    <Compile Include="Udfs\Decompiler.cs" />
+    <Compile Include="Udfs\Dom\AssignmentStmnt.cs" />
+    <Compile Include="Udfs\Dom\BinaryOperator.cs" />
+    <Compile Include="Udfs\Dom\Block.cs" />
+    <Compile Include="Udfs\Dom\CompilationUnit.cs" />
+    <Compile Include="Udfs\Dom\Const.cs" />
+    <Compile Include="Udfs\Dom\ConstDecls.cs" />
+    <Compile Include="Udfs\Dom\DeclVar.cs" />
+    <Compile Include="Udfs\Dom\ElseStmnt.cs" />
+    <Compile Include="Udfs\Dom\Expression.cs" />
+    <Compile Include="Udfs\Dom\Atom.cs" />
+    <Compile Include="Udfs\Dom\Function.cs" />
+    <Compile Include="Udfs\Dom\FunctionCall.cs" />
+    <Compile Include="Udfs\Dom\GlobalDecls.cs" />
+    <Compile Include="Udfs\Dom\Identifier.cs" />
+    <Compile Include="Udfs\Dom\IfStmnt.cs" />
+    <Compile Include="Udfs\Dom\Operator.cs" />
+    <Compile Include="Udfs\Dom\Resultis.cs" />
+    <Compile Include="Udfs\Dom\Statement.cs" />
+    <Compile Include="Udfs\Dom\WhileLoop.cs" />
+    <Compile Include="Ui\FormUdfs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FormUdfs.Designer.cs">
+      <DependentUpon>FormUdfs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Udfs\GeneratedHelper.cs" />
+    <Compile Include="Udfs\ObjectGenerator.cs" />
+    <Compile Include="Udfs\ParsingHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Udfs\Runtime\ArgumentVariable.cs" />
+    <Compile Include="Udfs\Runtime\AssignmentStatement.cs" />
+    <Compile Include="Udfs\Runtime\Block.cs" />
+    <Compile Include="Udfs\Runtime\Constant.cs" />
+    <Compile Include="Udfs\Runtime\Expression.cs" />
+    <Compile Include="Udfs\Runtime\Function.cs" />
+    <Compile Include="Udfs\Runtime\GlobalVariable.cs" />
+    <Compile Include="Udfs\Runtime\IfStatement.cs" />
+    <Compile Include="Udfs\Runtime\LocalVariable.cs" />
+    <Compile Include="Udfs\Runtime\Operator.cs" />
+    <Compile Include="Udfs\Runtime\ResultisStatement.cs" />
+    <Compile Include="Udfs\Runtime\RuntimeElement.cs" />
+    <Compile Include="Udfs\Runtime\RuntimeEnvironment.cs" />
+    <Compile Include="Udfs\Runtime\Statement.cs" />
+    <Compile Include="Udfs\UdfsObject.cs" />
+    <Compile Include="Udfs\Runtime\Variable.cs" />
+    <Compile Include="Udfs\Runtime\WhileLoopStatement.cs" />
+    <Compile Include="Udfs\SemanticAnalyzer.cs" />
+    <Compile Include="Udfs\udfsLexer.cs" />
+    <Compile Include="Udfs\udfsParser.cs" />
+    <Compile Include="Ui\FormViewAST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FormViewAST.Designer.cs">
+      <DependentUpon>FormViewAST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\FormViewDefFuncs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FormViewDefFuncs.Designer.cs">
+      <DependentUpon>FormViewDefFuncs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\UdfsCompletionData.cs" />
+    <EmbeddedResource Include="Ui\FormDebug.resx">
+      <DependentUpon>FormDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\FormUdfs.resx">
+      <DependentUpon>FormUdfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Ui\FormViewAST.resx">
+      <DependentUpon>FormViewAST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\FormViewDefFuncs.resx">
+      <DependentUpon>FormViewDefFuncs.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="udfs.xshd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

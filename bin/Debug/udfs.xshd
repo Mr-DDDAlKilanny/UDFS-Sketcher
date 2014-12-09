@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SyntaxDefinition name="Udfs" extensions=".udfs" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  
+  <Color name="Comment" foreground="Green" exampleText="// comment" />
+  <Color name="Operator" foreground="Red" />
+  <Color name="Punctuation" exampleText="a(b.c);" />
+  <Color name="MethodCall" foreground="MidnightBlue" fontWeight="bold" exampleText="o.ToString();"/>
+  <Color name="NumberLiteral" foreground="DarkBlue" exampleText="3.1415f"/>
+  <Color name="Keywords" fontWeight="bold" foreground="Blue" exampleText="if (a) {} else {}"/>
+  <Color name="TrueFalse" fontWeight="bold" foreground="DarkCyan" exampleText="b = false; a = true;" />
+  <Color name="TypeKeywords" fontWeight="bold" foreground="DarkCyan" exampleText=""/>
+
+  <Property name="DocCommentMarker" value="!!" />
+
+  <!-- This is the main ruleset. -->
+  <RuleSet>
+    
+    <Span color="Comment">
+      <Begin color="XmlDoc/DocComment">!!</Begin>
+      <RuleSet>
+        <Import ruleSet="XmlDoc/DocCommentSet"/>
+      </RuleSet>
+    </Span>
+
+    <Span color="Comment">
+      <Begin>!!</Begin>
+    </Span>
+
+    <Keywords color="TrueFalse">
+      <Word>nan</Word>
+      <Word>posinf</Word>
+	  <Word>neginf</Word>
+    </Keywords>
+
+    <Keywords color="Keywords">
+      <Word>function</Word>
+      <Word>const</Word>
+      <Word>declvar</Word>
+      <Word>while</Word>
+      <Word>global</Word>
+      <Word>if</Word>
+      <Word>else</Word>
+      <Word>resultis</Word>
+    </Keywords>
+
+    <!-- Mark previous rule-->
+    <Rule color="MethodCall">
+      \b
+      [\d\w_]+  # an identifier
+      (?=\s*\() # followed by (
+    </Rule>
+
+    <!-- Digits -->
+    <Rule color="NumberLiteral">
+      (\b0[xX][0-9a-fA-F]+  # hex number
+      |
+      (	\b\d+(\.[0-9]+)?   #number with optional floating point
+      |	\.[0-9]+           #or just starting with floating point
+      )
+      ([eE][+-]?[0-9]+)? # optional exponent
+      )
+    </Rule>
+	
+	<Rule color="Operator">:= | != | = | \+ | \- | \* | \/ | \% | ,</Rule>
+
+    <Rule color="Punctuation">
+      [()\[\]{}]+
+    </Rule>
+  </RuleSet>
+</SyntaxDefinition>
