@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Sketcher.Udfs.Runtime;
+using System.CodeDom;
 
 namespace Sketcher.Udfs
 {
@@ -53,6 +54,11 @@ namespace Sketcher.Udfs
             {
                 item.Object = this;
             }
+        }
+
+        public CodeCompileUnit ToCSharp()
+        {
+            return UdfsToCSharpHelper.Get(new List<UdfsObject>() { this });
         }
     }
 }

@@ -195,6 +195,8 @@ namespace Sketcher.Udfs.Runtime
             }
         }
 
+        public List<UdfsObject> Objects { get; private set; }
+
         public bool Updated { get { return initialized; } }
 
         private void addWithConflictChecking<T>(List<T> original, List<T> _new,
@@ -226,6 +228,7 @@ namespace Sketcher.Udfs.Runtime
             functions = new List<Function>(SystemUdfsObject.Functions);
             globalVariables = new List<GlobalVariable>(SystemUdfsObject.Globals);
 
+            List<UdfsObject> objs = new List<UdfsObject>();
             if (File.Exists(SettingsFile))
             {
                 objFiles = new List<string>();
@@ -246,6 +249,7 @@ namespace Sketcher.Udfs.Runtime
                                     addWithConflictChecking(constants, res.Constants, ret, line);
                                     addWithConflictChecking(globalVariables, res.Globals, ret, line);
                                     addWithConflictChecking(functions, res.Functions, ret, line);
+                                    objs.Add(res);
                                 }
                                 else
                                     ret.Add(new Error(string.Format("Object file \"{0}\" does not exist",
@@ -260,6 +264,7 @@ namespace Sketcher.Udfs.Runtime
                     }
                 }
             }
+            Objects = objs;
             initialized = true;
             return ret;
         }

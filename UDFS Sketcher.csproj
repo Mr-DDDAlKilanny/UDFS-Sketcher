@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
-      <HintPath>..\CS2\Reference\Antlr3.Runtime.dll</HintPath>
+      <HintPath>References\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.AvalonEdit">
-      <HintPath>C:\Users\ibrahim\Desktop\New folder\FastColoredTextBox-master\SharpDevelop_4.3.3.9663_Source\bin\ICSharpCode.AvalonEdit.dll</HintPath>
+      <HintPath>References\ICSharpCode.AvalonEdit.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -58,6 +58,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Udfs\UdfsToCSharpHelper.cs" />
     <Compile Include="Ui\BraceFoldingStrategy.cs" />
     <Compile Include="Drawing\Expressions\Expression.cs" />
     <Compile Include="Drawing\Expressions\expressionLexer.cs" />

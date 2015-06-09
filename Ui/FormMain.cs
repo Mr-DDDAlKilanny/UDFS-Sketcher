@@ -13,6 +13,8 @@ using ICSharpCode.AvalonEdit.Highlighting;
 using Sketcher.Udfs.Runtime;
 using Sketcher.Udfs;
 using Sketcher.Udfs.Runtime.Debugging;
+using Microsoft.CSharp;
+using System.IO;
 
 namespace Sketcher.Ui
 {
@@ -140,6 +142,22 @@ namespace Sketcher.Ui
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dumpAllToCSharpFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dlg = new SaveFileDialog())
+            {
+                dlg.FileName = "UserFunctions";
+                dlg.Filter = "CSharp files (*.cs)|*.cs|All Files (*.*)|*.*";
+                if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    using (var provider = new CSharpCodeProvider())
+                    using (var stream = new StreamWriter(dlg.FileName))
+                        provider.GenerateCodeFromCompileUnit(
+                            UdfsToCSharpHelper.Get(RuntimeEnvironment.Instance.Objects), stream, null);
+                }
+            }
         }
     }
 }
